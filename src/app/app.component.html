@@ -3,6 +3,7 @@
 <div *ngFor="let server of servers" >
   <div [ngClass]="{'serverDecorator': true, 'serverOffline': server.serverStatus === 'offline' }">
     <!-- uppercase pipe -->
+    <img src="{{server.imageUrl |  default: 'http://s3.amazonaws.com/uifaces/faces/twitter/sillyleo/128.jpg' : true }} " height=30 width=30>|
     <span>{{server.serverName | uppercase}}</span>| 
     <span>{{server.serverType | lowercase}}</span>|
     <span>{{server['serverStatus']}}</span>|  
@@ -13,7 +14,7 @@
     <!-- <span>{{server['serverCreated'] | date : 'shortTime' }}</span>| -->
     <!-- <span>{{server['serverCreated'] | date : 'd/M/y' }}</span>| -->
     <!-- currency pipe -->
-  <span>{{server['cost'] | currency : 'CAD' : 'code' }}</span>
+    <span>{{server['cost'] | currency : 'CAD' : 'code' }}</span>
   </div>
   
 </div>
