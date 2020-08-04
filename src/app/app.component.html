@@ -1,6 +1,8 @@
 
 <div>Server Status</div>
-<div *ngFor="let server of servers" >
+<!-- {{filteredStatus}} -->
+<input type="text" [(ngModel)]="filteredStatus">
+<div *ngFor="let server of servers | filter : filteredStatus : 'offline' " >
   <div [ngClass]="{'serverDecorator': true, 'serverOffline': server.serverStatus === 'offline' }">
     <!-- uppercase pipe -->
     <img src="{{server.imageUrl |  default: 'http://s3.amazonaws.com/uifaces/faces/twitter/sillyleo/128.jpg' : true }} " height=30 width=30>|

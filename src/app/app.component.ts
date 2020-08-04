@@ -44,6 +44,7 @@ servers= [{
 ngOnInit(){
   
 }
+filteredStatus = '';
 
 addServer(){
  let server = {
