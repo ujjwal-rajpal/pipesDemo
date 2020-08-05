@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { promise } from 'protractor';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = ''
+    location = new Promise((resolve, reject)=>{
+      setTimeout(()=>{
+        resolve('USA')
+      },2000)
+  })
+
+
   
 servers= [{
   'serverName' : 'Andrew Server',

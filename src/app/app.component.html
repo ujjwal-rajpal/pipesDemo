@@ -1,5 +1,5 @@
 
-<div>Server Status</div>
+<div>Server: {{ location | async }}</div>
 <!-- {{filteredStatus}} -->
 <input type="text" [(ngModel)]="filteredStatus">
 <div *ngFor="let server of servers | filter : filteredStatus : 'offline' " >
